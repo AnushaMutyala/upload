@@ -1,0 +1,35 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Pins</h1>
+
+<div class="pin-block">  
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th class="col-md-1">Title</th>
+        <th class="col-md-1">Caption</th>        
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @pins.each do |pin| %>
+        <tr>
+          <td class="col-md-1"><%= pin.title %></td>
+          <td class="col-md-1"><%= pin.caption %></td>
+          <td class="col-md-2">
+            <%= link_to 'Show', pin, class: "btn btn-info" %>
+            <%= link_to 'Edit', edit_pin_path(pin), class: "btn  btn-warning" %>
+            <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
+  
+
+  <%= link_to 'New Pin', new_pin_path, class: "btn btn-primary" %>
+ </div> 

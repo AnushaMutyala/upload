@@ -1,0 +1,27 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @pin.title %>
+  </p> 
+
+  <p>
+    <strong>Caption:</strong>
+    <%= @pin.caption %>
+  </p>
+
+  <div style="width:200px;height:auto">  
+    <%=  image_tag(@pin.image,style: 'width:100%') %><br><%= link_to 'Downloadpicture',@pin.image,download: '',class:"btn btn-primary"%>
+    
+  </div>
+  <br>
+  <div >
+    <%=link_to 'veiwFile',@pin.file,class: "btn btn-default"%>
+    <%=link_to 'DownloadFile',@pin.file,download:'',class:"btn btn-primary" %> 
+  </div>
+  <br>  
+
+  <%= link_to 'Edit', edit_pin_path(@pin), class: "btn btn-warning" %> |
+  <%= link_to 'Back', pins_path,class: "btn btn-dark" %>
+</div>

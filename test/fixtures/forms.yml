@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firstname: MyText
+  lastname: MyText
+  gender: MyText
+  Are: MyString
+  u: MyString
+  eligible: false
+
+two:
+  firstname: MyText
+  lastname: MyText
+  gender: MyText
+  Are: MyString
+  u: MyString
+  eligible: false

@@ -1,0 +1,50 @@
+<div class ="container">
+  <%= form_with(model: pin, local: true) do |form| %>
+    <% if pin.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(pin.errors.count, "error") %> prohibited this pin from being saved:</h2>
+
+        <ul>
+        <% pin.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="form-group col-md-4">
+        <%= form.label :title %><br>
+        <%= form.text_field :title,class:"form-control" %>
+      </div>
+    </div>
+      
+    <div class="row">
+      <div class="form-group col-md-4">
+        <%= form.label :caption %><br>
+        <%= form.text_area :caption,class:"form-control" %>
+      </div>
+    </div>
+    <div class ="row">
+      <div  class="form-group col-md-4">
+        <%= form.label :image %>
+        <%= form.file_field :image%>
+      </div>
+    </div>
+    <div class ="row">
+      <div class="form-group col-md-4">
+        <%= form.label :file %>
+        <%= form.file_field :file,direct_upload: true, 
+        accept: 'application/pdf, 
+        application/zip,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/msexcel' %>
+      </div>
+    </div>
+    <br>
+    <div class ="row">
+      <div class="actions">
+        <%= form.submit 'Create', class: "btn btn-primary" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+
