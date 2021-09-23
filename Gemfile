@@ -32,6 +32,8 @@ gem 'bootstrap-sass','~> 3.3.6'
 gem 'jquery-rails'
 #gem 'turbolinks'
 # Use Capistrano for deployment
+gem 'aws-sdk-s3', require: false
+gem 'aws-sdk' , '~> 3'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
